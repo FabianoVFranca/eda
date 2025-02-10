@@ -23,28 +23,28 @@ Para o array $values = [3, 1, 2, 3, 10, 23, 2, 1, 77, 7]$, temos que $pivot = 3$
 
 **Passo 2.** Vamos iterar com j agora, identificando o primeiro valor menor do que o pivot. Enquanto for maior, apenas anda com j para trás. No nosso caso então, j vai parar no índice 7, já que 1 é menor que o pivot 3.
 
-<p align="center">values = [<font color="blue">3</font>, 1, 2, 3, <font color="red">10</font>, 23, 2, <font color="red">1</font>, 77, 7]</p>
+<p align="center">values = [<font color="blue">3</font>, 1, 2, 3, <font color="red">10</font>, 23, 2, <font color="red">1</font>, 10, 77, 7]</p>
 
 Agora perguntamos: i < j? Sim, pois 4 é menor do que 7. Então trocamos v[i] por v[j], ou seja, trocamos 10 por 1. Note que estamos mantendo os menores valores imediatamente a frente do pivot e os maiores na parte final do array, por isso trocamos.
 
-<p align="center">values = [<font color="blue">3</font>, 1, 2, 3, <font color="red">1</font>, 23, 2, <font color="red">10</font>, 77, 7]</p>
+<p align="center">values = [<font color="blue">3</font>, 1, 2, 3, <font color="red">1</font>, 23, 2, <font color="red">10</font>, 10, 77, 7]</p>
 
 
 Acabou? Não, pois i ainda é menor ou igual a j, isto é, não ultrapassou j. Nesse caso, continuamos iterando com os dois. Vamos lá. i pararia no índice 5, pois 23 é maior do que 3. Já o j pararia no índice 6, já que 2 é menor do que 3.
 
-<p align="center">values = [<font color="blue">3</font>, 1, 2, 3, 1, <font color="red">23</font>, <font color="red">2</font>, 77, 7]</p>
+<p align="center">values = [<font color="blue">3</font>, 1, 2, 3, 1, <font color="red">23</font>, <font color="red">2</font>, 10, 77, 7]</p>
 
 
 Agora perguntamos: i < j? Sim, pois 5 é menor do que 6. Então trocamos v[i] por v[j], ou seja, trocamos 23 por 2.
 
-<p align="center">values = [<font color="blue">3</font>, 1, 2, 3, 1, <font color="red">2</font>, <font color="red">23</font>, 77, 7]</p>
+<p align="center">values = [<font color="blue">3</font>, 1, 2, 3, 1, <font color="red">2</font>, <font color="red">23</font>, 10, 77, 7]</p>
 
 Acabou? Não, pois i ainda é menor ou igual a j, isto é, não ultrapassou j. Nesse caso, continuamos iterando com os dois. Vamos lá. i pararia no índice 6, pois encontrou o valor 23, que é maior que o pivot. Já o j pararia no índice 5, já que 2 é menor do que 3. 
 
 Agora perguntamos: i < j? Não, pois 6 é maior do que 5. Nesse caso paramos a computação e apenas trocamos o pivot pelo elemento na posição j:
 
 
-<p align="center">values = [<font color="blue">2</font>, 1, 2, 3, 1, <font color="blue">3</font>, 23, 77, 7]</p>
+<p align="center">values = [<font color="blue">2</font>, 1, 2, 3, 1, <font color="blue">3</font>, 23, 10, 77, 7]</p>
 
 Particionou? Sim, né? Todos os valores à esquerda do pivot são menores ou iguais a ele e todos os valores à direita do pivot são maiores que ele.
 
